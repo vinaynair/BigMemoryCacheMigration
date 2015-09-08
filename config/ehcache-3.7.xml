@@ -1,0 +1,23 @@
+<ehcache name="cacheManagerOne" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+
+    <terracottaConfig url="localhost:9510"/>
+
+    <cache name="Cache1" 
+           maxElementsInMemory="10000" 
+           maxElementsOnDisk="50000" 
+           eternal="false" 
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="300">
+        <terracotta concurrency="128" consistency="strong"/>
+    </cache>
+    <cache name="Cache2"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="50000"
+           eternal="false"
+           timeToIdleSeconds="400"
+           timeToLiveSeconds="0">
+        <terracotta concurrency="128" consistency="strong"/>
+    </cache>
+
+</ehcache>
