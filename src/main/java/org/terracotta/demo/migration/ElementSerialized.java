@@ -47,7 +47,6 @@ public class ElementSerialized implements Serializable {
         long currentTime = System.currentTimeMillis();
         long adjustedTime = currentTime - timeSpent;
         CacheConfiguration config = cache.getCacheConfiguration();
-//        return new Element(key,value,version,adjustedTime,adjustedTime,adjustedTime,hitCount);
 
         return new Element(key, value, version,
                 adjustedTime,//created time 

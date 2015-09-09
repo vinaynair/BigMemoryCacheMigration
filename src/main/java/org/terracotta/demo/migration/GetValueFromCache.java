@@ -21,9 +21,11 @@ public class GetValueFromCache {
         CacheManager cacheManager = CacheManager.newInstance(ehcacheXml);
         Cache cache = cacheManager.getCache(cacheName);
         Element e = cache.get(key);
-        long timeToLive=(e.getExpirationTime()-System.currentTimeMillis())/1000;
-        System.out.println("Got element from cache "+e+" , and it will expire after "+timeToLive);
-        
+        long timeToLive = 0;
+        if (e != null)
+            timeToLive = (e.getExpirationTime() - System.currentTimeMillis()) / 1000;
+        System.out.println("Got element from cache " + e + " , and it will expire after " + timeToLive);
+
         cacheManager.shutdown();
     }
 }

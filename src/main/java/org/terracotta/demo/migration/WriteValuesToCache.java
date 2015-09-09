@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
 /**
+ * Read the values from the values file & write them to the cache
  * Created by vinay on 8/28/15.
  */
 public class WriteValuesToCache {
@@ -44,7 +45,7 @@ public class WriteValuesToCache {
             }
             System.out.println("Write element[" + elementSerialized + "] to cache");
             elementsCount++;
-            Element element=elementSerialized.createEhCacheElement(cache);
+            Element element = elementSerialized.createEhCacheElement(cache);
             cache.putQuiet(element);
         }
 

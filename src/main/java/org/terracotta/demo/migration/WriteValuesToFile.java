@@ -7,6 +7,7 @@ import net.sf.ehcache.Element;
 import java.io.*;
 
 /**
+ * For each key in the key file, read the value and write it to the file*
  * Created by vinay on 8/28/15.
  */
 public class WriteValuesToFile {

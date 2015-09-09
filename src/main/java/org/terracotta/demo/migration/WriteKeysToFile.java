@@ -9,9 +9,9 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 
 /**
- * cache-count
- * key-1
- * key-2*
+ * Write just the keys to the file<br/>
+ * This is done so that we keep the data being streamed by the server as well as the data held in-memory on the client small
+ * <p/>
  * Created by vinay on 8/28/15.
  */
 public class WriteKeysToFile {
