@@ -10,7 +10,8 @@ Copy terracotta-license.key to the root folder
 # RUNNING 
 
 
-To **test**,  lets write some dummy data to cache, Cache1 that is deployed on Terracotta version 3.7.5
+To **test**,  lets write some dummy data to cache, Cache1 that is deployed on Terracotta version 3.7.5. 
+[Source](./src/main/java/org/terracotta/demo/migration/WriteDummyDataToCache.java)
 ```
 $> sh scripts/writeDummyDataToCache.sh 3.7.5 config/ehcache-3.7.xml Cache1
 ```
@@ -31,9 +32,9 @@ Now lets write the values we exported from Terracotta-3.7.5  to Terracotta-4.3.0
 $> sh scripts/writeValuesToCache.sh 4.3.0 config/ehcache-4.3.xml Cache1 values.txt
 ```
 
-To test, simply use a client that keeping listing the elements every 1s
+To test, simply use the client that get()s the key from the cache and prints the expiry time
 ```
-$> sh scripts/readValuesFromCache.sh 4.3.0 config/ehcache-4.3.xml Cache1 keys.txt
+$> sh scripts/getValueFromCache.sh 4.3.0 config/ehcache-4.3.xml Cache1 key-0
 ```
 
 # Troubleshooting common issues
