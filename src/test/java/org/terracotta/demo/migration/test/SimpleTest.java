@@ -40,7 +40,7 @@ public class SimpleTest {
         Assert.assertTrue("A new element must have close to complete TTL",
                 timeRemaining > 97);
 
-        ElementSerialized elementSerialized = new ElementSerialized(2, 2, 1, 50000, 50000, 1);
+        ElementSerialized elementSerialized = new ElementSerialized(2, 2, 1, 50000, 1);
         Element e1 = elementSerialized.createEhCacheElement(cache);
         System.out.println("Writing element "+e1+". current time="+System.currentTimeMillis());
         cache.putQuiet(e1);
@@ -70,7 +70,7 @@ public class SimpleTest {
         Assert.assertTrue("A new element must have close to complete TTL",
                 timeRemaining > 97);
 
-        ElementSerialized elementSerialized = new ElementSerialized(2, 2, 1, 50000, 50000, 1);
+        ElementSerialized elementSerialized = new ElementSerialized(2, 2, 1, 50000, 1);
         Element e1 = elementSerialized.createEhCacheElement(cache);
         System.out.println("Writing element "+e1+". current time="+System.currentTimeMillis());
         cache.putQuiet(e1);

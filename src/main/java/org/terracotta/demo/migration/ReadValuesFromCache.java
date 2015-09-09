@@ -27,7 +27,8 @@ public class ReadValuesFromCache {
         ///read keys file
 
 
-        while (true) {
+        while (true)
+        {
             File keysFile = new File(keysFileName);
             FileInputStream fis = new FileInputStream(keysFile);
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -55,7 +56,7 @@ public class ReadValuesFromCache {
                         + (element.getExpirationTime() - currentTime) / 1000);
             }
             System.out.println(
-                    "Statistics: Total cache size =" + cacheSizeFromFile + ".Total elements found in cache = "
+                    "Statistics: Total cache size from file =" + cacheSizeFromFile + ".Total elements found in cache = "
                             + elementsFound);
             ois.close();
             fis.close();

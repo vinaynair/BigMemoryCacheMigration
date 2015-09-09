@@ -17,11 +17,20 @@ public class ElementSerialized implements Serializable {
     private long timeSpent;
     private long hitCount;
 
-    public ElementSerialized(Object key, Object value, long version, long timeSpentOnTTL, long timeSpentOnTTI, long hitCount) {
+    /**
+     * Used only for unit testing
+     *
+     * @param key
+     * @param value
+     * @param version
+     * @param timeSpent
+     * @param hitCount
+     */
+    public ElementSerialized(Object key, Object value, long version, long timeSpent, long hitCount) {
         this.key = key;
         this.value = value;
         this.version = version;
-        this.timeSpent = timeSpentOnTTI;
+        this.timeSpent = timeSpent;
         this.hitCount = hitCount;
     }
 
@@ -38,11 +47,18 @@ public class ElementSerialized implements Serializable {
         long currentTime = System.currentTimeMillis();
         long adjustedTime = currentTime - timeSpent;
         CacheConfiguration config = cache.getCacheConfiguration();
+//        return new Element(key,value,version,adjustedTime,adjustedTime,adjustedTime,hitCount);
+
         return new Element(key, value, version,
-                adjustedTime, adjustedTime,
-                hitCount, false,
-                (int) config.getTimeToLiveSeconds(), (int) config.getTimeToIdleSeconds(),
-                adjustedTime);
+                adjustedTime,//created time 
+                adjustedTime, // last access time
+                hitCount,
+                false,
+                (int) config.getTimeToLiveSeconds(),//ttl
+                (int) config.getTimeToIdleSeconds(),//tti
+                adjustedTime // last update time
+        );
+
     }
 
     @Override

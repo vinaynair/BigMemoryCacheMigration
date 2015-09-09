@@ -25,10 +25,7 @@ public class WriteDummyDataToCache {
         int elementsCount=0;
         for (int j = startIndex; j < endIndex; j++) {
             Element element=new Element("key-" + j, "value-" + j);
-            System.out.println("Writing element "+element+". current time="+System.currentTimeMillis());
             cache.put(element);
-            element  = cache.getQuiet("key-"+j);
-            System.out.println("Reading element "+element+". current time="+System.currentTimeMillis());
             elementsCount++;
         }
 

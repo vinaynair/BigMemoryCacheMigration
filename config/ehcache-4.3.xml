@@ -8,15 +8,15 @@
            maxEntriesInCache="50000"
            eternal="false"
            timeToIdleSeconds="0"
-           timeToLiveSeconds="300">
+           timeToLiveSeconds="300" statistics="true">
         <terracotta concurrency="128" consistency="strong"/>
     </cache>
     <cache name="Cache2"
            maxEntriesLocalHeap="10000"
            maxEntriesInCache="50000"
            eternal="false"
-           timeToIdleSeconds="400"
-           timeToLiveSeconds="0">
+           timeToIdleSeconds="200"
+           timeToLiveSeconds="0" statistics="true">
         <terracotta concurrency="128" consistency="strong"/>
     </cache>
 

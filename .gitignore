@@ -1,0 +1,15 @@
+*.class
+*.txt
+*.iml
+*.key
+
+target/
+client-logs/
+.idea/
+
+
+
+
+
+
+

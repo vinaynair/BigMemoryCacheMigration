@@ -3,7 +3,7 @@
 ```
 $>mvn clean compile package dependency:copy-dependencies -P3.7.5
 
-$>mvn dependency:copy-dependencies -P4.3.0
+$>mvn package -P4.3.0
 ```
 Copy terracotta-license.key to the root folder
 
