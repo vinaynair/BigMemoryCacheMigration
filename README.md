@@ -1,11 +1,15 @@
+# OBJECTIVE
+Read data from a 3.7.5 cache and write to a 4.3.0 cache
+
+
 # BUILDING
 
-**1.** Using maven build and copy the dependencies for 3.7.5 into the target folder
+**1.** Using maven, build and copy the dependencies for Terracotta BigMemory 3.7.5 into the target folder
 ```
 $>mvn clean compile package dependency:copy-dependencies -P3.7.5
 ```
 
-**2.** Copy the dependencies for 4.3.0 to the target folder as well
+**2.** Copy the dependencies for BigMemory 4.3.0 to the target folder as well
 ```
 $>mvn package -P4.3.0
 ```
@@ -13,7 +17,7 @@ $>mvn package -P4.3.0
 **3.** Copy terracotta-license.key to the root folder
 
 #CONFIGURING
-Add jars to the classpath for the scripts by updating the following variable within ./scripts/setenv.sh script
+Add jars to the classpath for the scripts by updating the following variable within [./scripts/setenv.sh](./scripts/setenv.sh) script
  
 ```
 #ADD YOUR APP CLASSPATH
